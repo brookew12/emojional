@@ -9,7 +9,8 @@
 import UIKit
 
 
-  let emojis = ["📖" : "don't give up", "💆🏾‍♀️" : "eat food!!!"]
+  let emojis = ["📖" : "book", "💆🏾‍♀️" : "massage"]
+let customMessages = ["book" : ["keep working!", "work harder!", "don't give up!"], "massage" : ["take a break!", "go watch something", "eat food!!!"]]
 
 class ViewController: UIViewController {
 
@@ -20,8 +21,9 @@ class ViewController: UIViewController {
         
           let selectedEmotion = sender.titleLabel?.text
       
+        let emojiMessage = customMessages[emojis[selectedEmotion!]!]?[Int.random(in: 0...2)]
         
-        let alertController = UIAlertController(title: "Let Emojional give you advice!", message: selectedEmotion, preferredStyle: UIAlertController.Style.alert)
+        let alertController = UIAlertController(title: "Let Emojional give you advice!", message: emojiMessage, preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
        present(alertController, animated: true, completion: nil)
         
