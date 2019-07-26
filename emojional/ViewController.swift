@@ -10,14 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBAction func showMessage(sender : UIButton) {
+        // in as much detail as possible
+        // pseudo-code the things that need to happen
+        // when a user clicks an emoji button
+        let alertController = UIAlertController(title: "Let Emojional give you advice!", message: "Work Harder!", preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+       present(alertController, animated: true, completion: nil)
+        
+    }
     
-//    @IBAction func book(_ sender: UIButton) {
-//        print("keep working!")
-//    }
-//    
-//    
-//    @IBAction func massage(_ sender: UIButton) {
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
